@@ -1,84 +1,103 @@
-📊 Instagram Business Profile Analysis
-This project scrapes public business profiles from Instagram using Selenium, stores structured post analytics (likes, comments, time, etc.) in PostgreSQL, and visualizes the insights with Grafana.
+# 📚 Instagram Business Profile Analysis System
 
-🚀 Features
-✅ Auto-login and profile navigation
+A web-based and automated platform to analyze business Instagram profiles. It scrapes profile statistics and post metrics, stores them in PostgreSQL, and visualizes insights using Grafana dashboards.
 
-📦 Scrapes:
+---
 
-Total posts, followers, following
+## 🌐 Tech Stack
 
-First 15 posts: likes/views, comment count, upload time, and URL
+### Scraper & Backend:
 
-💾 Data saved to PostgreSQL
+* **Python**
+* **Selenium (with undetected-chromedriver)**
+* **PostgreSQL**
 
-📊 Dashboard analysis using Grafana
+### Visualization:
 
-🖥️ Technologies Used
-Tool	Purpose
-Selenium	Browser automation & scraping
-PostgreSQL	Data storage
-Grafana	Interactive dashboard & analytics
-Python	Core scripting language
+* **Grafana**
 
-📌 Project Structure
-bash
-Copy
-Edit
-instagram-profile-analyzer/
-│
-├── scraper.py                 # Selenium-based scraper script
-├── db_store.py               # Script to store data into PostgreSQL
-├── dashboard.png             # Grafana dashboard screenshot
-├── requirements.txt          # Python dependencies
-└── README.md                 # Project documentation
-⚙️ Setup Instructions
-Clone Repository
+---
 
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/instagram-profile-analyzer.git
-cd instagram-profile-analyzer
-Install Dependencies
+## ⚙️ .env Configuration
 
-bash
-Copy
-Edit
+While running locally, ensure the following environment variables are configured as needed:
+
+```env
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=instagram_analysis
+DB_USER=your_db_user
+DB_PASS=your_password
+```
+---
+
+## Clone the Repository
+```
+git clone https://github.com/misel09/instaETL.git
+```
+---
+
+## Install Python Dependencies
+```
 pip install -r requirements.txt
-Update Credentials
+```
+---
 
-In scraper.py:
-
-python
-Copy
-Edit
-username_input.send_keys("your_instagram_username")
+## Set Instagram Credentials
+```
+username_input.send_keys("your_username")
 password_input.send_keys("your_password")
-Run Scraper
+```
+---
 
-bash
-Copy
-Edit
-python scraper.py
-Store to PostgreSQL
+## Run the Scraper
+```
+python app.py
+```
+---
 
-Create your DB schema, then use db_store.py to insert data.
+## Connect Grafana
+- Add PostgreSQL as a data source  
+- Import pre-configured dashboards or create your own
 
-Grafana Dashboard
+---
 
-Connect Grafana to PostgreSQL and build your analytics board using SQL queries or import existing .json config (if provided).
+## ✅ Features
 
-📊 Example Grafana Panel Ideas
-Followers Trend
+- Scrape followers, likes, comments, and post data  
+- Schedule scraping with cron  
+- Store results securely in PostgreSQL  
+- Analyze trends with Grafana  
+- Filter top-performing posts
 
-Average Likes per Post
+---
 
-Comment-to-Like Ratio
+## 📊 Grafana Visualization Ideas
 
-Top Performing Posts
+- 📈 Follower Growth Trend  
+- ❤️ Likes vs Time  
+- 💬 Avg Comments per Post  
+- 🔁 Post Frequency Heatmap  
+- 🔍 Post Engagement Insights
 
-Post Frequency Timeline
+---
 
-📃 License
-MIT License – Feel free to use and modify.
+## 🧠 Best Practices
+
+- Use virtualenv for dependency management  
+- Store secrets in a `.env` file or environment variables  
+- Avoid scraping too fast to prevent bans  
+- Validate and clean data before storing
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Acknowledgements
+
+Thanks to open-source contributors, Selenium, Grafana community, and all developers working to make social media analytics more accessible.
+
