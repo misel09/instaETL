@@ -222,9 +222,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 Thanks to open-source contributors, Selenium, Kafka, InfluxDB, Grafana community, and all developers working to make social media analytics more accessible.
 
-```
+
 
 ---
 
-👉 Do you also want me to add a **sample Grafana dashboard JSON** in the repo so users can import it directly, instead of building from scratch?
-```
