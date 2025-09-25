@@ -193,9 +193,9 @@ def scrape_profile(target, credential):
 if __name__ == "__main__":
     profiles = ["zara", "nike", "gucci", "adidas", "puma"]
     credentials = [
-        {"username": "smitp_09_", "password": "23it077"},
-        {"username": "p_prince_016_", "password": "23it085"},
-        {"username": "__.prince.__.09__", "password": "23it085"}
+        {"username": "username1", "password": "password"},
+        {"username": "", "password": ""},
+        {"username": "", "password": ""}
     ]
     with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
         futures = [
